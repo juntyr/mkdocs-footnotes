@@ -1,0 +1,25 @@
+site_name: pkg
+
+strict: true
+
+markdown_extensions:
+  - footnotes
+
+nav:
+  - Home: index.md
+  - Documentation: api.md
+
+plugins:
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - exclude:
+      glob:
+        - requirements.txt
+  - autorefs
+  - mkdocstrings:
+      enable_inventory: false
+      handlers:
+        python:
+          options:
+            show_if_no_docstring: true
+
